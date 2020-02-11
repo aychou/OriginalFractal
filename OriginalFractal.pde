@@ -14,7 +14,7 @@ public void draw()
 	pushMatrix();
   	translate(width*0.5, height*0.5);
   	rotate(frameCount / -100.0);
-  	fill(255, 255, 0);
+  	fill((int)(Math.random()*255)+100, (int)(Math.random()*255)+100, 0);
   	myFractal(0, 0, 40, 80, 5); 
   	popMatrix();
 
@@ -24,6 +24,7 @@ public void myFractal(float x, float y, float radius1, float radius2, int npoint
 	star(x, y, radius1, radius2, npoints);
 	if(radius1>10&& radius2>40)
 	{
+
 		myFractal(x-radius1, y-radius2, (radius1-10), (radius2-10), npoints);
 		myFractal(x+radius1, y+radius2, (radius1-10), (radius2-10), npoints);
 	}
